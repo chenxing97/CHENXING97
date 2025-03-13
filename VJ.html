@@ -1,0 +1,448 @@
+<!DOCTYPE html><html><head>
+      <title>VJ</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h3 id="joe-verghese研究文章总结"><strong>Joe Verghese研究文章总结</strong> </h3>
+<table>
+<thead>
+<tr>
+<th><strong>标题</strong></th>
+<th><strong>发表时间</strong></th>
+<th><strong>期刊</strong></th>
+<th><strong>影响因子（参考）</strong></th>
+<th><strong>研究目的</strong></th>
+<th><strong>研究方法</strong></th>
+<th><strong>研究结果</strong></th>
+<th><strong>结论</strong></th>
+<th><strong>文章亮点</strong></th>
+<th><strong>局限性</strong></th>
+<th><strong>新思路联想</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Abnormality of Gait as a Predictor of Non-Alzheimer’s Dementia</strong></td>
+<td>2002</td>
+<td><em>N Engl J Med</em></td>
+<td>96.2</td>
+<td>探讨步态异常作为非阿尔茨海默病痴呆的预测因子</td>
+<td><strong>前瞻性队列研究</strong>，评估步态，随访观察痴呆的发生情况</td>
+<td>步态异常是非阿尔茨海默病痴呆的显著预测因子，特别是血管性痴呆</td>
+<td>步态异常可能是血管性痴呆等非阿尔茨海默病痴呆的一个早期标志，可帮助早期识别高风险个体</td>
+<td>首次提出步态异常与非阿尔茨海默病痴呆之间的关联</td>
+<td>研究样本主要为社区居住的老年人，可能存在选择偏倚，且步态评估方法相对主观</td>
+<td>进一步研究步态异常与不同类型的非阿尔 茨海默病痴呆之间的关系，探索其他潜在的预测因子</td>
+</tr>
+<tr>
+<td><strong>Validity of Divided Attention Tasks In Predicting Falls in Older Individuals: A Preliminary Study</strong></td>
+<td>2002</td>
+<td><em>Journal of the American Geriatrics Society</em></td>
+<td>6.1</td>
+<td>探讨双任务（如边走边说任务）在预测老年人跌倒中的有效性和可靠性</td>
+<td><strong>前瞻性队列研究</strong>，纳入60名65岁及以上的社区居住老年人，进行简单+复杂的双任务，评估其与12个月内跌倒的关系</td>
+<td>13名受试者在12个月内跌倒，简单任务（OR=7.02）和复杂任务（OR=13.7）均能显著预测跌倒。敏感性分别为46%和39%，特异性分别为89%和96%</td>
+<td>双任务是一种可靠且有效的测试方法，可用于识别高风险跌倒的老年人。未来的研究需要在更大的样本和不同环境中验证这些发现</td>
+<td>1. 首次将双任务与跌倒风险联系起来</td>
+<td>1. 样本量较小，仅60人。2. 研究仅限于社区居住的老年人。</td>
+<td>1. 可以在更大样本和不同人群（如痴呆患者）中验证WWT任务的有效性。2. 探讨其他认知任务与跌倒风险的关系。3. 结合其他跌倒风险评估工具，提高预测准确性</td>
+</tr>
+<tr>
+<td><strong>Reliability and validity of a telephone-based mobility assessment questionnaire</strong></td>
+<td>2004</td>
+<td><em>Age and Ageing</em></td>
+<td>6.7</td>
+<td>评估电话为基础的移动能力评估问卷（TMAQ）在识别社区居住老年人步态异常中的可靠性和有效性</td>
+<td><strong>横断面研究</strong>，纳入221名社区居住的老年人，进行电话访谈和临床步态评估，比较TMAQ与临床和定量步态评估的一致性</td>
+<td>TMAQ的测试-重测可靠性良好（kappa=0.57-0.68），敏感性和特异性分别为54.1%-77.8%和64.1%-90.1%</td>
+<td>TMAQ是一种可靠且有效的工具，可用于识别社区居住老年人的步态异常，适合用于研究和临床筛查</td>
+<td>1. 提供了电话访谈在步态评估中的应用。2. TMAQ简单易行，适合大规模筛查。3. 结合了临床和定量步态评估作为标准</td>
+<td>1. 步态评估的局限性可能影响结果的准确性。2. 未包括无法行走的老年人，限制了结果的普适性。3. 样本主要为社区居住的老年人，未涵盖其他人群</td>
+<td>结合其他电话筛查工具（如认知和抑郁筛查）进行综合评估</td>
+</tr>
+<tr>
+<td><strong>Epidemiology of Gait Disorders in Community-Residing Older Adults</strong></td>
+<td>2006</td>
+<td><em>Journal of the American Geriatrics Society</em></td>
+<td>4.29</td>
+<td>研究社区老年人步态障碍的流行病学及其与死亡和制度化的关系</td>
+<td><strong>前瞻性队列研究</strong>，参与者包括488名年龄在70岁至99岁之间的成年人。在基线和5年的年度访问中，对受试者进行临床评估，以确定是否存在神经或非神经步态异常。测量指标为步态障碍的发生率和患病率以及死亡时间</td>
+<td>168名有步态异常的受试者：70名神经系统，81名非神经系统，17名两者。 步态异常患病率为35.0%。 异常步态发生率为每1,000人年168.6人，并随年龄增长而增加。神经性步态异常的男性发病率较高，而非神经性步态异常的女性发病率较高。异常步态与死亡风险较高相关</td>
+<td>在社区老年人中，步态异常的发生率和患病率很高，并且死亡风险较高相关</td>
+<td>量化了步态障碍在社区老年人群体中的患病率和发生率，并揭示了神经性和非神经性步态异常与不良预后之间的关系</td>
+<td>依赖于临床评估来定义步态异常，这种评估可能无法捕捉到细微的异常</td>
+<td>对神经系统步态进行更为详细的亚型分析，并探讨相关危险因素</td>
+</tr>
+<tr>
+<td><strong>Cognitive and Mobility Profile of Older Social Dancers</strong></td>
+<td>2006</td>
+<td><em>Journal of the American Geriatrics Society</em></td>
+<td>7.5</td>
+<td>探讨长期社交舞蹈对老年人平衡和步态的潜在益处</td>
+<td><strong>横断面研究</strong>：比较24名老年社交舞者（OSD）与84名非舞者（OND）的认知和运动表现</td>
+<td>- OSD步幅更长，步态更稳定（如支撑时间减少，摆动时间增加）。<br>- 两组认知测试无差异。<br>- OSD平衡能力更好，但力量无差异</td>
+<td>长期社交舞蹈可能改善老年人的平衡和步态模式</td>
+<td>首次通过定量步态分析验证舞蹈的物理益处，强调活动特异性效果</td>
+<td>样本量小，横断面设计无法推断因果关系</td>
+<td>探索舞蹈干预作为预防跌倒的可行性；结合认知训练的双重任务研究</td>
+</tr>
+<tr>
+<td><strong>Gait Dysfunction in Mild Cognitive Impairment Syndromes</strong></td>
+<td>2008</td>
+<td><em>Journal of the American Geriatrics Society</em></td>
+<td>7.5</td>
+<td>系统评估MCI亚型（遗忘型/非遗忘型）的步态异常</td>
+<td><strong>横断面研究</strong>，对比116名MCI患者（54 a-MCI，62 na-MCI）与295名健康对照的步态</td>
+<td>- a-MCI患者步态变异性更高，na-MCI患者步速更慢。<br>- 神经性步态在a-MCI中更常见（31.5% vs. 16.3%）</td>
+<td>MCI患者普遍存在步态异常，不同亚型特征可能反映潜在病理差异</td>
+<td>首次分亚型揭示MCI的步态特征，为早期神经退行性疾病提供线索</td>
+<td>横断面设计无法确定因果关系；未追踪转化为痴呆的风险</td>
+<td>纵向研究步态变化与痴呆病理的关系；开发步态-认知联合筛查工具</td>
+</tr>
+<tr>
+<td><strong>Walking While Talking: Effect of Task Prioritization in the Elderly</strong></td>
+<td>2007</td>
+<td><em>Archives of Physical Medicine and Rehabilitation</em></td>
+<td>4.3</td>
+<td>探讨任务优先级对老年人“边走边说”（WWT）表现的影响</td>
+<td><strong>横断面设计</strong>，189名无残疾老年人完成两种WWT任务（均衡注意 vs. 优先说话）</td>
+<td>- 优先说话时步速更慢，步态稳定性更差。<br>- 认知任务表现无显著差异</td>
+<td>任务指令显著影响步态表现，提示临床评估需标准化指令</td>
+<td>揭示任务优先级对双任务表现的动态调节，为跌倒风险评估提供新视角</td>
+<td>未纵向追踪跌倒风险；样本相对健康，可能低估实际影响</td>
+<td>开发标准化的双任务评估方式；结合神经影像学探索注意力分配机制</td>
+</tr>
+<tr>
+<td><strong>Self-Reported Difficulty in Climbing Up or Down Stairs in Nondisabled Elderly</strong></td>
+<td>2008</td>
+<td><em>Archives of Physical Medicine and Rehabilitation</em></td>
+<td>4.3</td>
+<td>分析老年人楼梯上下困难与临床功能的相关性</td>
+<td><strong>横断面研究</strong>，310名无残疾老年人通过问卷和定量步态评估</td>
+<td>- 上下楼梯困难与高血压、关节炎、抑郁症状相关。<br>- 下楼梯困难者跌倒风险更高。<br>- 联合困难与日常活动受限强相关（OR=6.58）</td>
+<td>楼梯上下困难是功能衰退的敏感指标，需独立评估以优化干预</td>
+<td>区分上下楼梯的临床意义，强调功能评估的精细化</td>
+<td>依赖自我报告，未直接观察楼梯表现；样本教育水平较高</td>
+<td>可开发基于楼梯表现的客观评估工具；结合居家传感器监测日常活动能力</td>
+</tr>
+<tr>
+<td><strong>Quantitative gait dysfunction and risk of cognitive decline and dementia</strong></td>
+<td>2007</td>
+<td><em>Journal of Neurology, Neurosurgery &amp; Psychiatry</em></td>
+<td>13.6</td>
+<td>探讨定量步态参数与认知衰退和痴呆风险的关系</td>
+<td><strong>前瞻性队列研究</strong>，纳入427名老年人，评估步态参数与认知衰退和痴呆的关系</td>
+<td>步态节奏和变异性因子与痴呆风险显著相关，步态速度因子与执行功能衰退相关</td>
+<td>定量步态参数可以预测认知衰退和痴呆风险，尤其是步态节奏和变异性</td>
+<td>首次使用因子分析将多个步态参数归纳为独立因子，展示了步态与认知的复杂关系</td>
+<td>样本量较小，随访时间较短，未评估其他步态参数</td>
+<td>结合其他生物标志物和神经影像学数据，进一步探讨步态与认知衰退的机制</td>
+</tr>
+<tr>
+<td><strong>High risk neurological gait syndrome and vascular dementia</strong></td>
+<td>2007</td>
+<td><em>J Neural Transm</em></td>
+<td>3.2</td>
+<td>定义高风险神经步态综合征（HRNG）并探讨其与血管性痴呆（VD）的关系</td>
+<td><strong>前瞻性队列研究</strong>，纳入399名老年人，随访观察HRNG与VD的关系</td>
+<td>HRNG是VD的显著预测因子，特别是在3年和5年的随访中</td>
+<td>HRNG可作为识别VD高风险个体的临床工具，有助于早期干预和管理</td>
+<td>进一步验证了步态异常与VD之间的关联，提出了HRNG这一新的临床概念</td>
+<td>研究样本量较小，随访时间相对较短，可能存在诊断偏倚</td>
+<td>进一步研究HRNG在不同人群中的适用性，探索其他干预措施对HRNG和VD的影响</td>
+</tr>
+<tr>
+<td><strong>Quantitative gait markers and incident fall risk in older adults</strong></td>
+<td>2009</td>
+<td><em>J Gerontol A Biol Sci Med Sci</em></td>
+<td>4.3</td>
+<td>考察定量步态标志物与老年人跌倒风险之间的关系</td>
+<td><strong>前瞻性队列研究</strong>，使用GAITRite电子走道评估步态，随访观察跌倒情况</td>
+<td>步态速度、节奏、变异性等指标与跌倒风险显著相关，其中步态速度下降是跌倒的独立预测因素</td>
+<td>量化步态评估可有效预测老年人跌倒风险，为预防跌倒提供依据</td>
+<td>提出了步态速度等量化指标作为跌倒风险的预测因子，具有临床实用性</td>
+<td>样本量相对较小，随访时间相对较短，可能存在选择偏倚</td>
+<td>进一步研究步态康复训练对预防跌倒的效果，探索其他步态参数与跌倒风险的关系</td>
+</tr>
+<tr>
+<td><strong>Effect of Cognitive Remediation on Gait in Sedentary Seniors</strong></td>
+<td>2010</td>
+<td><em>Journal of Gerontology: MEDICAL SCIENCES</em></td>
+<td>5.2</td>
+<td>探讨认知训练对久坐老年人步态的影响</td>
+<td><strong>随机单盲对照试验</strong>，24名久坐老年人分为认知训练组和对照组，进行8周的计算机化认知训练，主要评估步态速度的变化</td>
+<td>认知训练组在正常行走和“边走边说”任务中的步态速度显著提高，对照组无显著变化</td>
+<td>认知训练可能改善久坐老年人的步态，值得进一步大规模验证</td>
+<td>首次探讨认知训练对步态的改善作用，展示了计算机化认知训练的可行性</td>
+<td>样本量小，缺乏长期随访，未评估其他认知功能的变化</td>
+<td>结合认知训练和物理训练的多模态干预是否对步态有更大的改善效果？</td>
+</tr>
+<tr>
+<td><strong>Relationship of Clinic-Based Gait Speed Measurement to Limitations in Community-Based Activities in Older Adults</strong></td>
+<td>2011年5月</td>
+<td><em>Archives of Physical Medicine and Rehabilitation</em></td>
+<td>2.97</td>
+<td>研究在诊所中进行的步态速度评估是否能够捕捉到各种家庭和社区活动限制的能力</td>
+<td><strong>横断面研究</strong>，参与者包括655名社区居民，年龄≥70岁。测量指标包括活动限制。应用 logistic 回归分析研究步态速度与活动限制间的关联</td>
+<td>1米/秒或更低的步态速度与至少1项选定活动受限的风险增加相关。1米/秒或更低的步态速度与在9项选择的活动中至少1项受限相关</td>
+<td>在诊所中进行的步态速度测量对于老年人来说具有生态学效度，可以作为功能状态的临床指标，可用于临床和研究设置</td>
+<td>强调了步态速度测量在评估老年人日常生活能力方面的重要性</td>
+<td>活动限制的定义较为广泛，且依赖于自我报告，可能存在主观性。横断面研究设计限制了因果关系的推断</td>
+<td>进一步研究步态速度与更为复杂的社区活动的关系，开发基于步态速度的干预措施</td>
+</tr>
+<tr>
+<td><strong>High-sensitivity C-reactive protein and mobility disability in older adults</strong></td>
+<td>2012</td>
+<td><em>Age and Ageing</em></td>
+<td>6.3</td>
+<td>确定高灵敏度 C 反应蛋白 (HsCRP) 水平与有/没有血管疾病的老年人发生活动受限和步速下降的风险之间的关联</td>
+<td><strong>前瞻性队列研究</strong>，对624名年龄在70岁及以上的成年人进行了步态和HsCRP评估</td>
+<td>224 名符合条件的受试者中，基线时HsCRP 水平升高（≥3mg/l）与步态速度的年下降更快（0.91厘米/秒）有关。HsCRP水平升高的受试者发生活动障碍的风险增加（OR=1.85）。在406名没有活动障碍的受试者中，HsCRP水平每增加一个单位，发生活动障碍的风险就会增加（OR=1.33）。在没有血管疾病的224人中，基线HsCRP水平与活动障碍和下降的关联更为强烈</td>
+<td>HsCRP水平预测老年人活动障碍和加速行走速度下降</td>
+<td>首次研究表明高灵敏度C-反应蛋白对高龄老人行动障碍的风险。</td>
+<td>需要进行更大规模的试验来验证这些发现</td>
+<td>探讨通过干预降低HsCRP水平，对改善老年人的活动能力的意义</td>
+</tr>
+<tr>
+<td><strong>Mobility Stress Test Approach to Predicting Frailty, Disability, and Mortality in High-Functioning Older Adults</strong></td>
+<td>2012</td>
+<td><em>Journal of the American Geriatrics Society</em></td>
+<td>6.1</td>
+<td>验证“边走边说”测试（WWT）在预测高功能老年人衰弱、残疾和死亡风险中的有效性</td>
+<td><strong>前瞻性队列研究</strong>，631名社区居住的高功能老年人，评估WWT速度与衰弱、残疾和死亡风险的关系</td>
+<td>WWT速度每下降10cm/s，衰弱、残疾和死亡风险分别增加12%、13%和13%</td>
+<td>WWT是一种有效的压力测试工具，可用于预测高功能老年人的健康风险</td>
+<td>WWT简单易行，适合临床使用</td>
+<td>研究结果需要其他队列验证</td>
+<td>结合其他生物标志物和认知测试，进一步提高WWT的预测准确性</td>
+</tr>
+<tr>
+<td><strong>Role of APOE Genotype in Gait Decline and Disability in Aging</strong></td>
+<td>2013</td>
+<td><em>Journals of Gerontology: MEDICAL SCIENCES (J Gerontol A Biol Sci Med Sci)</em></td>
+<td>5.05</td>
+<td>量化与APOE ε4等位基因相关的步态下降和残疾的风险</td>
+<td><strong>前瞻性队列研究</strong>，评估了627名70岁以上社区居住老年人的APOE基因型和定量步态测量，中位随访时间为3年。主要结局是步态速度下降（cm/s/年）和新发残疾。使用线性混合效应模型和Cox比例风险模型分析数据</td>
+<td>APOE ε4等位基因频率为24.1%。APOE ε4的存在与整体步态速度下降无显著相关，但与老年男性更快的步态速度下降相关（OR=：-1.16）。ε4等位基因与男性步态速度下降之间的关系预测了步态速度的降低（OR=-1.70）。APOE ε4等位基因与老年男性残疾风险增加相关（HR=3.72）</td>
+<td>APOE ε4等位基因与老年男性步态速度下降和残疾风险增加有关</td>
+<td>首次报告APOE基因型对衰老过程中步态下降的影响</td>
+<td>随访时间相对较短。 样本量中非裔美国人数量较少，限制了对种族差异的分析。残疾评估并非在所有参与者都完成。 因此，无法评论基因型对残疾模式变化的影响</td>
+<td>可开发针对认知缺陷和血管疾病的干预措施</td>
+</tr>
+<tr>
+<td><strong>Motoric cognitive risk syndrome—multicountry prevalence and dementia risk</strong></td>
+<td>2014</td>
+<td><em>Neurology</em></td>
+<td>7.7</td>
+<td>报告运动认知风险综合征（MCR）的患病率及其与痴呆风险的关系</td>
+<td><strong>多国横断面研究</strong>，纳入26802名老年人，评估MCR的患病率及与痴呆风险的关系</td>
+<td>MCR的患病率为9.7%，且与更高的痴呆风险相关</td>
+<td>MCR是老年人认知衰退的一个重要标志，可作为早期识别痴呆高风险个体的临床工具</td>
+<td>提出了MCR这一新的临床概念，为痴呆的早期预防和干预提供了新方向</td>
+<td>研究设计为横断面，无法确定因果关系，且MCR的诊断标准可能需要进一步优化</td>
+<td>进一步研究MCR的发病机制，探索其他潜在的预测因子，完善MCR的诊断标准</td>
+</tr>
+<tr>
+<td><strong>Motoric cognitive risk syndrome Multicenter incidence study</strong></td>
+<td>2014</td>
+<td><em>Neurology</em></td>
+<td>7.7</td>
+<td>报告MCR的发病率及其与痴呆风险的关系</td>
+<td><strong>前瞻性队列研究</strong>，纳入3128名老年人，随访观察MCR的发病率及与痴呆风险的关系</td>
+<td>MCR的发病率为65.2/1,000人年，且与更高的痴呆风险相关</td>
+<td>MCR是老年人认知衰退的一个重要预测因子，可帮助识别痴呆高风险个体</td>
+<td>进一步验证了MCR作为痴呆预测因子的有效性，强调了其在临床实践中的应用价值</td>
+<td>研究样本主要来自美国，可能存在地域差异</td>
+<td>可进一步研究MCR在不同地域和人群中的适用性，探索其他干预措施对MCR的影响</td>
+</tr>
+<tr>
+<td><strong>Locomotion, cognition and influences of nutrition in ageing</strong></td>
+<td>2014</td>
+<td><em>Proceedings of the Nutrition Society</em></td>
+<td>7.6</td>
+<td>探讨步态、认知和营养在衰老过程中的相互关系</td>
+<td><strong>前瞻性队列研究</strong>，评估步态、认知功能和营养状况，分析其相互关系</td>
+<td>步态和认知功能在老年人中存在显著相关性，且营养状况可能影响两者的衰退</td>
+<td>步态和认知功能在衰老过程中可能受到共同的病理生理机制影响，营养干预可能对改善两者有积极作用</td>
+<td>强调了步态、认知和营养之间的相互关系，为综合干预提供了理论依据</td>
+<td>研究设计为观察性研究，无法确定因果关系，且营养评估方法可能不够全面</td>
+<td>进一步研究营养干预对步态和认知功能的具体影响，探索其他潜在的干预措施</td>
+</tr>
+<tr>
+<td><strong>Biology of Falls: Preliminary Cohort Study Suggesting a Possible Role for Oxidative Stress</strong></td>
+<td>2017</td>
+<td><em>Journal of the American Geriatrics Society</em></td>
+<td>7.5</td>
+<td>验证氧化应激（丙二醛）作为社区老年人跌倒的生物标志物</td>
+<td><strong>前瞻性队列研究</strong>：对266名无痴呆的老年人进行血浆丙二醛（MDA）和炎症标志物（IL-6）的长期追踪</td>
+<td>- MDA水平每增加1个标准差，跌倒风险增加53%。<br>- 最高MDA四分位数组跌倒风险是低组的2.47倍。<br>- IL-6与跌倒无关</td>
+<td>氧化应激是老年人跌倒的独立预测因子，可能成为预防干预的新靶点</td>
+<td>首次将氧化应激与跌倒风险关联，强调生物学机制的重要性</td>
+<td>生物标志物选择有限，未探索其他氧化应激标志物；依赖自我报告的跌倒数据</td>
+<td>结合抗氧化干预（如运动、饮食）的临床试验；多组学分析探索分子机制</td>
+</tr>
+<tr>
+<td><strong>Brain Activation in High-Functioning Older Adults and Falls</strong></td>
+<td>2017</td>
+<td><em>Neurology</em></td>
+<td>11.8</td>
+<td>探索前额叶皮层（PFC）激活与老年人跌倒的关系</td>
+<td><strong>前瞻性队列研究</strong>：166名高功能老年人（无痴呆、步态正常）完成功能性近红外光谱（fNIRS）双任务行走测试</td>
+<td>- 双任务中PFC激活水平越高，跌倒风险增加32%。<br>- 行为表现（步速、字母速率）无法预测跌倒</td>
+<td>PFC神经活动是跌倒的早期神经生物学标志，早于行为表现异常</td>
+<td>首次将脑成像与跌倒风险关联，揭示神经代偿机制的潜在失效</td>
+<td>fNIRS空间分辨率有限；未探索其他脑区（如基底节）的作用</td>
+<td>结合多模态神经影像（如fMRI、EEG）；开发基于脑活动的个性化干预</td>
+</tr>
+<tr>
+<td><strong>Spatial navigation and risk of cognitive impairment A prospective cohort study</strong></td>
+<td>2017</td>
+<td><em>Alzheimer’s &amp; Dementia</em></td>
+<td>13</td>
+<td>探讨空间导航能力与认知障碍风险之间的关系</td>
+<td><strong>前瞻性队列研究</strong>，使用地板迷宫测试评估空间导航能力，随访观察认知障碍的发生情况</td>
+<td>空间导航能力下降与认知障碍风险增加显著相关</td>
+<td>空间导航能力可能是认知衰退的一个早期标志，可作为早期识别认知障碍的临床工具</td>
+<td>提出了空间导航能力作为认知障碍的预测因子，为早期干预提供了新方向</td>
+<td>研究样本量较小，随访时间相对较短，空间导航测试的生态效度可能有限</td>
+<td>可进一步研究空间导航能力与其他认知功能之间的关系，探索其他潜在的预测因子</td>
+</tr>
+<tr>
+<td><strong>Motoric Cognitive Risk Syndrome and Predictors of Transition to Dementia</strong></td>
+<td>2019</td>
+<td><em>Alzheimer’s &amp; Dementia</em></td>
+<td>16</td>
+<td>确定运动认知风险综合征（MCR）向痴呆转化的预测因素</td>
+<td><strong>多中心队列研究</strong>，610名MCR患者（SCD+步态缓慢）的长期追踪</td>
+<td>- 认知因素（逻辑记忆、MMSE、SCD严重性）可预测痴呆转化。<br>- 步速在MCR人群中无预测价值</td>
+<td>MCR的痴呆风险由认知而非运动缺陷驱动，需临床重点关注认知评估</td>
+<td>多队列验证增强结果普适性；首次明确MCR亚型的转化机制</td>
+<td>未纳入步态变异性等高级步态参数；部分队列教育水平偏高</td>
+<td>结合生物标志物（如Aβ、tau）探索MCR的病理异质性；开发认知-运动联合干预</td>
+</tr>
+<tr>
+<td><strong>Modifiable Risk Factors for New-Onset Slow Gait in Older Adults</strong></td>
+<td>2016</td>
+<td><em>JAMDA (Journal of the American Medical Directors Association)</em></td>
+<td>7.8</td>
+<td>识别老年人新发步态缓慢的可改变风险因素</td>
+<td><strong>前瞻性队列研究</strong>，2306名65岁及以上老年人，评估15种可改变的风险因素与4年后步态缓慢的关系</td>
+<td>体力活动不足、认知障碍、肌肉无力、疼痛、肥胖、视力下降和跌倒显著增加步态缓慢风险，这些因素共同解释了77%的步态缓慢风险</td>
+<td>识别出一组可改变的风险因素，为预防步态缓慢提供了干预目标</td>
+<td>基于全国代表性样本，识别出多个可干预的风险因素，具有较高的公共卫生意义</td>
+<td>风险因素列表不全面，随访间隔较长，未评估药物使用的影响</td>
+<td>开发针对这些风险因素的多因素干预措施，评估其对步态缓慢的预防效果</td>
+</tr>
+<tr>
+<td><strong>Subjective Motoric Complaints and New Onset Slow Gait</strong></td>
+<td>2021</td>
+<td><em>Journal of Gerontology: Medical Sciences</em></td>
+<td>6.1</td>
+<td>探讨主观运动功能抱怨与新发步态缓慢的关系</td>
+<td><strong>前瞻性队列研究</strong>，纳入548名社区居住的老年人，评估主观运动功能抱怨与新发步态缓慢的关系</td>
+<td>所有5个主观运动功能抱怨均能预测新发步态缓慢，抱怨数量越多，风险越高</td>
+<td>主观运动功能抱怨是新发步态缓慢的前兆，可用于临床风险评估和干预</td>
+<td>首次验证主观运动功能抱怨对新发步态缓慢的预测能力，展示了其在临床中的应用潜力</td>
+<td>样本主要为白人，未评估其他种族和族裔的差异</td>
+<td>结合其他生物标志物和神经影像学数据，进一步探讨主观抱怨与步态缓慢的机制</td>
+</tr>
+<tr>
+<td><strong>Gait and cognitive declines in dementia—double or nothing</strong></td>
+<td>2022</td>
+<td><em>JAMA Network Open</em></td>
+<td>10.5</td>
+<td>探讨步态和认知在痴呆中的变化及其相互关系</td>
+<td><strong>前瞻性队列研究</strong>，使用GAITRite电子走道评估步态，同时评估认知功能</td>
+<td>步态和认知功能在痴呆患者中均呈下降趋势，且两者之间存在显著相关性</td>
+<td>步态和认知功能在痴呆进程中可能相互影响，提示两者可能存在共同的病理生理机制</td>
+<td>强调了步态和认知在痴呆中的关联，为综合评估和干预提供了新视角</td>
+<td>研究设计为观察性研究，无法确定因果关系，且样本量较小</td>
+<td>可进一步研究步态和认知功能之间的因果关系，探索改善步态对认知功能的影响</td>
+</tr>
+<tr>
+<td><strong>Everyday function profiles in prodromal stages of MCI: Prospective cohort study</strong></td>
+<td>2022</td>
+<td><em>Alzheimer’s &amp; Dementia</em></td>
+<td>16.6</td>
+<td>探讨在轻度认知障碍（MCI）前驱阶段，日常功能的变化情况，特别是复杂日常活动的限制</td>
+<td><strong>前瞻性队列研究</strong>，比较59名最终发展为MCI的社区老年人（“前MCI”）与284名保持认知正常的老年人的基线复杂日常功能。</td>
+<td>前MCI组在基线时表现出更多的复杂日常功能限制（平均3.1±3.0 vs. 2.0±2.4，），特别是在旅行、娱乐、记住约会和爱好方面。前MCI组的复杂日常功能限制在MCI诊断前逐渐增加（平均变化：前MCI 1.9±3.6 vs. 正常对照组0.5±2.7）</td>
+<td>MCI的前驱阶段与复杂日常活动的渐进性轻度限制相关</td>
+<td>1. 认知正常的老年人在复杂日常功能上报告轻度限制<br>2. 前MCI在复杂日常功能上的限制类型和水平与正常对照组不同<br>3. 前MCI在旅行、娱乐、记住约会和爱好方面有更多限制<br>4. 前MCI的复杂日常功能限制随时间进展更快</td>
+<td>1. 样本量较小，尤其是前MCI组。<br>2. 未区分前MCI的亚型（如遗忘型和非遗忘型）。<br>3. 未研究病理学因素对功能下降的影响。<br>4. 功能评估工具未涵盖所有可能的日常活动。</td>
+<td>研究早期干预对延缓日常功能下降的效果</td>
+</tr>
+<tr>
+<td><strong>Non-literacy biased, culturally fair cognitive detection tool in primary care patients with cognitive concerns: a randomized controlled trial</strong></td>
+<td>2024</td>
+<td><em>Nature Medicine</em></td>
+<td>82.9</td>
+<td>评估5-Cog范式（一种简短、文化适应的认知检测工具）在初级保健中改善痴呆诊断和管理的效果</td>
+<td><strong>随机对照试验（RCT）</strong>，将1201名有认知问题的初级保健患者随机分配到5-Cog组（599人）或对照组（602人），比较两组在90天内的痴呆护理行动（如诊断、检查、药物或专科转诊）</td>
+<td>5-Cog组的痴呆护理行动显著高于对照组（18.5% vs. 6.8%），5-Cog组的新MCI或痴呆诊断（10.5% vs. 2.0%）和检查（12.2% vs. 2.0%）显著增加</td>
+<td>5-Cog范式显著改善了初级保健中有认知问题患者的痴呆护理行动，特别是在诊断、检查和专科转诊方面</td>
+<td>1. 5-Cog范式显著提高了痴呆护理行动的发生率。<br>2. 5-Cog范式在种族/族裔、教育和语言亚组中均有效。<br>3. 5-Cog范式在初级保健中易于实施，且无需医生亲自操作</td>
+<td>1. 研究在单一中心进行，可能限制了结果的普遍性。<br>2. MCI和痴呆的诊断基于初级保健医生的判断，而非神经心理学评估</td>
+<td>开发更简化的认知检测工具，适用于资源有限的地区</td>
+</tr>
+<tr>
+<td><strong>Neurological gait abnormalities and risk of falls in older adults</strong></td>
+<td>2010</td>
+<td><em>Journal of Neurology</em></td>
+<td>4.8</td>
+<td>评估神经性步态异常在预测老年人跌倒风险中的有效性</td>
+<td><strong>前瞻性队列研究</strong>，纳入632名70岁及以上的社区老年人，通过临床步态评分量表评估步态异常，并使用广义估计方程（GEE）分析步态异常与跌倒风险的关系</td>
+<td>120名（18.9%）受试者在基线时被诊断为神经性步态异常。神经性步态异常的受试者跌倒风险增加（风险比1.49）。不稳定的步态（风险比1.52）和神经病变步态（风险比1.94）是预测跌倒的两个主要亚型</td>
+<td>神经性步态异常及其亚型是老年人跌倒的独立预测因素，临床步态评估有助于识别高风险老年人并采取预防措施</td>
+<td>1. 神经性步态异常与跌倒风险显著相关。<br>2. 不稳定的步态和神经病变步态是跌倒的主要预测因素</td>
+<td>1. 样本为社区老年人，可能不适用于临床患者。<br>2. 步态亚型的分类可能存在误判。<br>3. 未考虑环境因素对跌倒的影响</td>
+<td>1. 进一步研究步态亚型与跌倒风险的关系。<br>2. 探索步态评估在临床实践中的应用<br>3. 开发更精确的步态评估工具</td>
+</tr>
+<tr>
+<td><strong>Identifying frailty in high functioning older adults with normal mobility</strong></td>
+<td>2010</td>
+<td><em>Age and Ageing</em></td>
+<td>6.7</td>
+<td>探讨在正常步速的高功能老年人中识别早期衰弱（frailty）的可行性</td>
+<td><strong>横断面研究</strong>，纳入539名70岁及以上、无残疾和痴呆的社区老年人，使用机体功能评估法（PPB）评估衰弱，并分析PPB与衰弱的关系。</td>
+<td>106名（19.7%）受试者符合衰弱标准。PPB评分与衰弱显著相关（OR 0.86）。PPB评分≤8的敏感性和特异性分别为52%和70%</td>
+<td>PPB可以识别正常步速的高功能老年人中的早期衰弱，有助于早期干预</td>
+<td>1. PPB评分与衰弱显著相关。<br>2. PPB评分≤8在识别衰弱方面具有中等敏感性和特异性。<br>3. 研究结果支持PPB在早期衰弱识别中的应用</td>
+<td>1. 横断面设计限制了因果推断。<br>2. 步速切点基于特定队列，需在其他样本中验证。<br>3. 未考虑其他步态变量（如步态变异性）的影响</td>
+<td>开发更全面的衰弱评估工具</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
